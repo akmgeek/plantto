@@ -1,0 +1,44 @@
+{% extends 'app/base.html' %}
+
+{% block title %}Product Catalog{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <div class="col-md-3">
+        <div class="categories">
+          <h3>Categories</h3>
+          <ul>
+            {% for category in categories %}
+              <li><a href="{% url 'category_products' category.id %}">{{ category.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <div class="col-md-9">
+        <div class="row">
+          {% for product in products %}
+            <div class="col-md-4 mb-4">
+              <div class="card">
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h5>
+                  <p class="card-text">{{ product.description }}</p>
+                  <p class="card-text">Price: ${{ product.price }}</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

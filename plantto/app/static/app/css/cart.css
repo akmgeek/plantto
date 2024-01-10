@@ -1,0 +1,22 @@
+
+.cart-container {
+    margin-top: 50px;
+    height: 100vh;
+}
+
+.cart-table th, .cart-table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cart-total {
+    margin-top: 20px;
+    background-color: #71b44d;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.checkout-btn {
+    background-color: #71b44d;
+    color: white;
+}

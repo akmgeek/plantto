@@ -1,0 +1,78 @@
+/* your_app/static/your_app/css/styles.css */
+
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #555;
+}
+
+.link-container {
+    margin-top: 20px;
+}
+
+.link-container a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+}
+
+.login_logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login_forgot_password {
+    margin-top: 10px;
+}
+
+.login-alert{
+    color: red
+}
+
+.login_button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.login_button:hover {
+    background-color: #555;
+}

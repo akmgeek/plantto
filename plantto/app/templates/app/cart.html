@@ -1,0 +1,40 @@
+<!-- your_app/templates/your_app/cart.html -->
+{% extends 'app/base.html' %}
+
+{% block title %}Shopping Cart{% endblock %}
+
+{% block content %}
+  <h2>Shopping Cart</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cart %}
+        <tr>
+          <td>{{ item.product.name }}</td>
+          <td>${{ item.product.price }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ item.total_price }}</td>
+          <td>
+            <a href="{% url 'remove_from_cart' item.product.id %}">Remove</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3"></td>
+        <td>Total: ${{ cart.get_total_price }}</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+{% endblock %}

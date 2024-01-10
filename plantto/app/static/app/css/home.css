@@ -1,0 +1,23 @@
+.black-heading{
+    font-size: 80pt;
+    color: black;
+    font-weight:900;
+    text-align: left;
+}
+.green-heading{
+    font-weight:900;
+    font-size: 80pt;
+    color: red;
+    text-align: left;
+}
+
+.description-text{
+    color: red;
+}
+
+/* Sub Navbar */
+.nav2{
+    background-color: #012b00;
+    color:red;
+    min-height: 10px;
+}

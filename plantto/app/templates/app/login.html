@@ -1,0 +1,47 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block title %}Login - Your Site{% endblock %}
+
+{% block content %}
+  <div class="container-md">
+    <div class="login_logo text-center mb-4">
+      <img class="img-fluid" src="{% static 'app/icons/logo.png' %}" style="height: 100%; width: 100px;" alt="Logo">
+    </div>
+
+    <div class="card mx-auto" style="max-width: 400px;">
+      <div class="card-body">
+        <form method="post" class="form-group">
+          {% csrf_token %}
+          <div class="mb-3">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+          </div>
+
+          <div class="mb-3">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+          </div>
+
+          <button type="submit" class="btn btn-primary">Login</button>
+
+          {% if messages %}
+            <div class="alert alert-danger mt-3">
+              {% for message in messages %}
+                {{ message }}
+              {% endfor %}
+            </div>
+          {% endif %}
+        </form>
+
+        <div class="login_forgot_password mt-3">
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <div class="link-container mt-3">
+          Don't have an account? <a href="{% url 'register' %}" class="btn btn-link">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
