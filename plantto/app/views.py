@@ -45,8 +45,13 @@ def user_logout(request):
     return redirect('home')  # Redirect to the home page after logout
 
 def home(request):
+    # username = request.user.username
+    # return render(request, 'app/home.html', {'username': username})  # Create home.html in your templates folder
     username = request.user.username
-    return render(request, 'app/home.html', {'username': username})  # Create home.html in your templates folder
+    products = Product.objects.all()
+    categories = Category.objects.all()
+    context = {'username': username, 'products': products, 'categories': categories}
+    return render(request, 'app/home.html', context)
 
 def category_products(request, category_id):
    # Get the category or return a 404 response if it doesn't exist
@@ -94,3 +99,6 @@ def remove_from_cart(request, product_id):
     cart = Cart(request)
     cart.remove(product)
     return redirect('cart_view')
+
+def contact(request):
+    return render(request, 'app/contact.html')

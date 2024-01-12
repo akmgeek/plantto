@@ -12,6 +12,7 @@ urlpatterns = [
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     path('home/', home, name='home'), 
+    path('contact/', home, name='contact'), 
      
     path('category/<int:category_id>/', category_products, name='category_products'), 
     path('products/', product_list, name='product_list'),
