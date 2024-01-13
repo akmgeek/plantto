@@ -64,10 +64,10 @@
     color: red
 }
 
-.login_button {
+.login-button {
     width: 100%;
     padding: 12px;
-    background-color: #333;
+    background-color: blue;
     color: #fff;
     border: none;
     cursor: pointer;

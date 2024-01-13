@@ -1,37 +1,32 @@
-
 {% extends 'app/base.html' %}
 
 {% block title %}Home - Your Site{% endblock %}
 
 {% block content %}
+    <div class="container-fluid shadow-none justify-content-center text-center">
 
-    <!-- Add your home page content here -->
+        <!-- Add your home page content here -->
 
-    {% comment %} Banner 1 {% endcomment %}
-    <div class="container ">
-        <img class= "img-fluid" src="../../../media/banner/1.png" alt="banner 1">
-    </div>
+        <!-- Banner 1 -->
+        <img class="img-fluid pb-3" src="../../../media/banner/1.png" alt="banner 1">
 
-    <div class="container">
+        <!-- Products -->
         <div class="row">
-          {% for product in products %}
-            <div class="col-md-3 mb-4"> <!-- Adjust the column size here -->
-              <div class="card">
-                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h5>
-             
-                  <p class="card-text">Price: ${{ product.price }}</p>
-   
+            {% for product in products %}
+                <div class="col-md-3 mb-4"> <!-- Adjust the column size here -->
+                    <div class="card">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body ">
+                            <h5 class="card-title"><a href="{% url 'product_detail' product.id %}" class="d-block overflow-hidden text-truncate product-name" >{{ product.name }}</a></h5>
+                            <p class="card-text product-price">Rs. {{ product.price }}</p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          {% endfor %}
+            {% endfor %}
         </div>
-    </div>
 
-    {% comment %} Features products {% endcomment %}
-    <div class="container ">
-        <img class= "img-fluid" src="../../../media/banner/3.png" alt="banner 2">
+        <!-- Featured Products -->
+        <img class="img-fluid" src="../../../media/banner/3.png" alt="banner 2">
+
     </div>
 {% endblock %}

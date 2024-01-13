@@ -4,10 +4,10 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-4">
-      <div class="col-md-3">
+<div class="container-fluid shadow-none products-container">
+  <div class="row  mx-2 px-2 mb-2">
+    <div class="col-sm-4 filter-area">
+      <div class="col">
         <div class="categories">
           <h3>Categories</h3>
           <ul>
@@ -19,19 +19,20 @@
       </div>
     </div>
 
-    <div class="col-8">
-      <div class="col-md-9">
+    <div class="col-sm-8">
+      <div class="col">
         <div class="row">
           {% for product in products %}
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4">
               <div class="card">
                 <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
                 <div class="card-body">
 
-                  <h5 class="card-title"><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h5>
+                  <h6 class="card-title " style="text-align: center;"><a class="product-name" href="{% url 'product_detail' product.id %}">{{ product.name }}</a></h6>
                   {% comment %} <p class="card-text">{{ product.description }}</p>{% endcomment %} 
-                  <p class="card-text">Price: ${{ product.price }}</p>
-                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                  <p class="card-text product-price">Rs. {{ product.price }}</p>
+                  <a href="#" class="btn btn-primary" id="Add-to-cart-button">Add to Cart</a>
+
                 </div>
               </div>
             </div>
