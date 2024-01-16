@@ -60,3 +60,12 @@
     background-color: #71b44d;
     border-radius: 10px;
 }
+
+.filter-product-lists{
+    text-decoration: none;
+}
+
+.filter-product-link{
+    text-decoration: none;
+    color: black;
+}

@@ -5,14 +5,15 @@ from .views import (register,
                     home,
                     user_login, user_logout,
                     product_list, category_products, product_detail,
-                    add_to_cart, cart_view , remove_from_cart)
+                    add_to_cart, cart_view , remove_from_cart, contact, about)
 
 urlpatterns = [
     path('register/', register, name='register'),
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
     path('home/', home, name='home'), 
-    path('contact/', home, name='contact'), 
+    path('contact/', contact, name='contact'), 
+    path('about/', about, name='about'), 
      
     path('category/<int:category_id>/', category_products, name='category_products'), 
     path('products/', product_list, name='product_list'),

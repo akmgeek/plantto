@@ -1,41 +1,27 @@
-<div class="container my-5">
-    <h2>Contact Us</h2>
+<!-- your_app/templates/your_app/cart.html -->
+{% extends 'app/base.html' %}
 
-    <div class="row">
-        <!-- Contact Form -->
-        <div class="col-md-6">
-            <form>
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                </div>
+{% block title %}Contact{% endblock %}
 
-                <div class="form-group">
-                    <label for="email">Your Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="col-md-6">
-            <h4>Plantto Headquarters</h4>
-            <p>Email: info@plantto.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <p>Address: 123 Nature Street, Green City</p>
-
-            <!-- Map Placeholder (Replace with your actual map) -->
-            <div class="embed-responsive embed-responsive-16by9 mt-4">
-                <!-- Replace the src attribute with the embed code or link to your map -->
-                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.9960544603756!2d-86.27507808482225!3d39.7684039449418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x886b50f8056d977f%3A0x154e0ecb27d6febc!2sPlantto%20Headquarters!5e0!3m2!1sen!2sus!4v1640702954550!5m2!1sen!2sus" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+{% block content %}
+<div class="container contact-container shadow-none" style="max-width: 600px;">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Enter your message"></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn w-100" style="background-color: #71b44d; color: white;">Submit</button>
+      </div>
+    </form>
 </div>
+{% endblock %}

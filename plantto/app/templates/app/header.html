@@ -1,16 +1,17 @@
 {% load static %}
-<header class="p-3 mb-3 border-bottom">
-    <div class="fluid-container">
+<header class="p-1 fixed-top" style="background-color: white;">
+    <div class="fluid-container ">
         <div class="d-flex flex-wrap align-items-center justify-content-between">
             <a href="{% url 'home' %}" class="navbar-logo d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
-                <img src="{% static 'app/icons/logo.png' %}" alt="Logo" width="40" height="32">
+                <img src="../../../media/icons/logo.png" alt="Logo" width="100%" height="32">
             </a>
 
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
                 <li><a href="{% url 'home' %}" class="nav-link px-2 link-body-emphasis">Home</a></li>
                 <li><a href="{% url 'product_list' %}" class="nav-link px-2 link-body-emphasis">Products</a></li>
-                <li><a href="#" class="nav-link px-2 link-body-emphasis">Contact</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-link px-2 link-body-emphasis">Contact</a></li>
+                <li><a href="{% url 'about' %}" class="nav-link px-2 link-body-emphasis">About</a></li>
             </ul>
 
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -19,7 +20,7 @@
 
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                    <img src="../../../media/icons/001-profile-user.png" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small">
                     <li><a class="dropdown-item" href="#">{{ username }}</a></li>
@@ -27,9 +28,10 @@
                     {% if user.is_authenticated %}
                         <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
                         <li><a class="dropdown-item" href="{% url 'cart_view' %}">Cart</a></li>
-                    {% else %}
+                        {% else %}
                         <li><a class="dropdown-item" href="{% url 'login' %}">Login</a></li>
                         <li><a class="dropdown-item" href="{% url 'register' %}">Signup</a></li>
+                        <li><a class="dropdown-item" href="{% url 'cart_view' %}">Cart</a></li>
                     {% endif %}
                 </ul>
             </div>

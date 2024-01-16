@@ -59,11 +59,11 @@ def category_products(request, category_id):
 
     # Get all products belonging to the specified category
     products = Product.objects.filter(category=category)
-
+    categories = Category.objects.all()
     # You can add additional logic or data processing here if needed
 
     # Pass the category and products to the template
-    context = {'category': category, 'products': products}
+    context = {'category': category, 'products': products, 'categories': categories}
     return render(request, 'app/product_list.html', context)
 
 
@@ -102,3 +102,6 @@ def remove_from_cart(request, product_id):
 
 def contact(request):
     return render(request, 'app/contact.html')
+
+def about(request):
+    return render(request, 'app/about.html')
